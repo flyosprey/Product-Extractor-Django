@@ -14,3 +14,8 @@ class SignupView(CreateView):
             return redirect("/admin")
         return super().get(request, *args, **kwargs)
 
+
+class LoginInterfaceView(LoginView):
+    template_name = "home/login.html"
+
+

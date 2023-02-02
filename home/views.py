@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic import TemplateView
 from django.views.generic import CreateView
 from django.contrib.auth.views import LoginView, LogoutView
 
@@ -21,3 +22,7 @@ class LoginInterfaceView(LoginView):
 
 class LogoutInterfaceView(LogoutView):
     template_name = "home/logout.html"
+
+
+class HomeView(TemplateView):
+    template_name = "home/welcome.html"

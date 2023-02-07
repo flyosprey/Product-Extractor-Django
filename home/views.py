@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import TemplateView
 from django.views.generic import CreateView
@@ -12,7 +12,7 @@ class SignupView(CreateView):
 
     def get(self, request, *args, **kwargs):
         if self.request.user.is_authenticated:
-            return redirect("/admin")
+            return redirect("service")
         return super().get(request, *args, **kwargs)
 
 
